@@ -1,3 +1,8 @@
+window.addEventListener('scroll', function(){
+  let scroll = document.querySelector('.scrolltop')
+      scroll.classList.toggle('active', window.scrollY > 100)
+});
+
 const API_KEY = 'api_key=1cf50e6248dc270629e802686245c2c8';
 const BASE_URL = 'https://api.themoviedb.org/3';
 const API_URL = BASE_URL + '/discover/movie?sort_by=popularity.desc&'+API_KEY;
@@ -393,3 +398,19 @@ const $checkbox = document.querySelector('#switch');
 $checkbox.addEventListener('change', function(){
     $html.classList.toggle('dark-mode')
 });
+
+let mybutton = document.getElementById("myBtn");
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+function topFunction() {
+  document.documentElement.scrollTop = 0;
+}
